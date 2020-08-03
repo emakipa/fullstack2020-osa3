@@ -1,0 +1,27 @@
+{
+  "name": "puhelinluettelonbackend",
+  "version": "0.0.1",
+  "description": "Exercise submissions for [Full stack open 2020](https://fullstackopen.com/en) course by University of Helsinki.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emakipa/fullstack2020-osa3.git"
+  },
+  "author": "Esa Mäkipää",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/emakipa/fullstack2020-osa3/issues"
+  },
+  "homepage": "https://github.com/emakipa/fullstack2020-osa3#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
