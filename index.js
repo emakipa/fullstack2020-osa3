@@ -1,7 +1,21 @@
 const express = require('express')
+const morgan = require('morgan')
 const app = express()
 
 app.use(express.json())
+
+// morgan custom token 
+morgan.token('data', function getData (req) {
+  if (req.method === 'POST') {
+    return JSON.stringify(req.body)
+  }
+  else {
+    return ''
+  }
+})
+
+// morgan middelware, log to console using custom configuration 
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms :data'))
 
 let persons = [
   {
