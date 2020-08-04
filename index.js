@@ -1,8 +1,12 @@
 const express = require('express')
 const morgan = require('morgan')
+const cors = require('cors')
 const app = express()
 
 app.use(express.json())
+
+// cors (Cross-origin resource sharing)
+app.use(cors())
 
 // morgan custom token 
 morgan.token('data', function getData (req) {
