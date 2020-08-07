@@ -4,6 +4,7 @@ const cors = require('cors')
 const app = express()
 
 app.use(express.json())
+app.use(express.static('build'))
 
 // cors (Cross-origin resource sharing)
 app.use(cors())
