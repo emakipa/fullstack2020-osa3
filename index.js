@@ -11,7 +11,7 @@ app.use(express.json())
 // cors (Cross-origin resource sharing)
 app.use(cors())
 
-// morgan custom token 
+// morgan custom token
 morgan.token('data', function getData (req) {
   if (req.method === 'POST') {
     return JSON.stringify(req.body)
@@ -21,7 +21,7 @@ morgan.token('data', function getData (req) {
   }
 })
 
-// morgan middelware, log to console using custom configuration 
+// morgan middelware, log to console using custom configuration
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :data'))
 
 // routes
@@ -34,13 +34,13 @@ app.get('/', (req, res) => {
 app.get('/api/persons', (req, res) => {
   Person.find({}).then(persons => {
     res.json(persons)
-  })  
+  })
 })
 
 // get phonebook info
 app.get('/info', (req, res) => {
   let date = new Date()
-    
+
   Person.find({})
     .then(persons => {
       res.send(`
@@ -50,7 +50,7 @@ app.get('/info', (req, res) => {
         </div>
       `)
     })
-  })
+})
 
 // get person with specific id
 app.get('/api/persons/:id', (req, res, next) => {
@@ -68,7 +68,7 @@ app.get('/api/persons/:id', (req, res, next) => {
 // delete data with specific id
 app.delete('/api/persons/:id', (req, res, next) => {
   Person.findByIdAndRemove(req.params.id)
-    .then(result => {
+    .then(() => {
       res.status(204).end()
     })
     .catch(error => next(error))
@@ -122,8 +122,8 @@ const errorHandler = (error, req, res, next) => {
   if (error.name === 'CastError') {
     return res.status(400).send({ error: 'malformatted id' })
   } else if (error.name === 'ValidationError') {
-      return res.status(400).json({ error: error.message })
-  }    
+    return res.status(400).json({ error: error.message })
+  }
 
   next(error)
 }

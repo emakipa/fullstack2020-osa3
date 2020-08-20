@@ -7,7 +7,7 @@ if (process.argv.length < 3) {
 
 const password = process.argv[2]
 
-const url = 
+const url =
   `mongodb://fullstack:${password}@cluster0-shard-00-00.cjzpf.mongodb.net:27017,cluster0-shard-00-01.cjzpf.mongodb.net:27017,cluster0-shard-00-02.cjzpf.mongodb.net:27017/phonebook?ssl=true&replicaSet=atlas-2m8ky1-shard-0&authSource=admin&retryWrites=true&w=majority`
 
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }).catch(err => console.log(err))
@@ -32,7 +32,7 @@ if (process.argv.length > 3) {
   })
 
   // save person
-  person.save().then(result => {
+  person.save().then(() => {
     console.log(`Added ${newName} number ${newNumber} to phonebook`)
     mongoose.connection.close()
   })
