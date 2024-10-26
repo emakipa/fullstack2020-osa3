@@ -9,7 +9,7 @@
     "test": "echo \\\"Error: no test specified\\\" && exit 1",
     "lint": "eslint .",
     "build:ui": "rm -rf build && cd ../full_stack_2020/osa2/puhelinluettelo && npm run build --prod && cp -r build ../../../full_stack_2020_osa3/",
-    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"    
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
   },
   "repository": {
     "type": "git",
