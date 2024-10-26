@@ -4,4 +4,4 @@ Exercise submissions for [Full stack open 2020](https://fullstackopen.com/en) co
 
 ### osa3
 
-* puhelinluettelon-backend 
+* puhelinluettelon-backend ([App on Cyclic](https://sparkling-tie-crab.cyclic.app))
